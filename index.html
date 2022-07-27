@@ -13,38 +13,39 @@
         <div class="headerSuperior">
             <p>aqui você encontra o melhor preço</p>
         </div>
-        <div class="headerTop">
-            <h1>Loja para calvos</h1>
+        <div class="headerTop" id="containerMenu">
+            <h1 id="imgLogo">Loja para calvos</h1>
             <span>
-                <a href="">
-                    <p>menu</p>
-                </a>
 
-                <a href="">
-                    <p>menu</p>
-                </a>
+                <p id="itemMenu1" onclick="btnHeader('ComoUsar')">Como usar</p>
 
-                <a href="">
-                    <p>menu</p>
-                </a>
-                <button>MN</button>
+                <p id="itemMenu2" onclick="btnHeader('PraQServe')">Para que serve</p>
+
+                <p id="itemMenu3" onclick="btnHeader('ComoFunciona')">Como funciona</p>
+
+                <button id="menu" onclick="btnMenu()">MN</button>
+
             </span>
         </div>
-        <div class="headerBottom">
-            <div class="containerLeft">
+        <span>
+            <div class="containerX" id="containerX"><img onclick="clickX()" src="img/btnFecharPropaganda_main.png" alt=""></div>
+            <div class="headerBottom" id="fundoTxt">
+        </span>
+
+            <div class="containerLeft" id="containerComTxt">
                 <div>
-                    <h1>Blá Blá Blá Blá</h1>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem deleniti, mollitia cumque provident est debitis quam expedita libero aspernatur at nostrum delectus ea, eum consequuntur maxime! Pariatur ullam nulla quibusdam.</p>
+                    <h1 id="title">Slogan maneirin</h1>
+                    <p id="txt">O minoxidil é uma substância ativa que estimula o crescimento capilar, já que aumenta o calibre dos vasos sanguíneos, melhorando a circulação sanguínea no local, e prolonga a fase anágena, que é a fase de nascimento e crescimento do cabelo.</p>
                     <button>VER  MAIS</button>
                 </div>
             </div>
-            <div class="containerRigth">
+            <div class="containerRigth" id="containerComImg">
                 <div class="item1ContainerLeft">
                     <img src="img/caixa.png" alt="">
                 </div>
                 <div class="item1ContainerRigth">
                     <h1>6 Frascos 60ml Minoxidil - Val. 08/23+</h1>
-                    <span style="display:flex;">
+                    <span style="display:flex;flex-direction: column;">
                         <p class="precoVelho">R$ 150,30 BRL</p>
                         <p class="precoNovo">R$ 101,70 BRL</p>
                     </span>
@@ -57,5 +58,70 @@
             </div>
         </div>
     </header>
+
+
+    <script>
+        let titulo = document.getElementById('title')
+        let text = document.getElementById('txt')
+        let containerComImg = document.getElementById('containerComImg')
+        let containerComTxt = document.getElementById('containerComTxt')
+        let fundoTxt = document.getElementById('fundoTxt')
+        let containerX = document.getElementById('containerX')
+        let cont = 0
+
+        function btnHeader(idBtn) {
+            
+            containerComImg.style.display = 'none'
+            containerX.style.display = 'block'
+            containerX.style.background = '#1212127a'
+            //containerComTxt.style.width = '90%'
+            fundoTxt.style.background = '#1212127a'
+            containerComTxt.style.marginTop = '0px'
+
+            if(idBtn == 'ComoUsar'){
+                titulo.innerHTML = 'Como usar'
+                text.innerHTML = '<strong>1. Cabelo</strong> <br> <br>Para tratar a queda de cabelo, a solução de minoxidil pode ser aplicada diretamente na pele do couro cabeludo seco, nas regiões em que o cabelo está mais fraco, com a ajuda de uma massagem, duas vezes ao dia. <br>Geralmente, a quantidade que é aplicada de cada vez é de cerca de 1 mL e a duração do tratamento pode ser de cerca de 3 a 6 meses ou conforme indicação do clinico geral ou dermatologista. <br> <br><strong>2. Barba</strong><br><br>Para preencher falhas da barba, o minoxidil pode ser aplicado da mesma forma que é aplicado no couro cabeludo, mas neste caso, o produto deve ser aplicado primeiro nas mãos e depois nas regiões da barba que se pretende tratar. Lavar as mãos após a aplicação do minoxidil na barba. <br>Depois de aplicar o produto, a pessoa deve passar um produto hidratante e nutritivo, como um óleo de coco ou amêndoas doces, por exemplo, para evitar o ressecamento e reduzir o cheiro do medicamento, já que ele tem uma grande quantidade de álcool, que seca a pele.<br> <br><strong>3. Sobrancelha</strong> <br> <br>O minoxidil também pode ser usado para engrossar as sobrancelhas, aplicando a solução com a ajuda de um cotonete. Depois de aplicar o produto, também se pode passar um óleo na sobrancelha, para que não fique ressecada. Saiba como fazer a sobrancelha crescer e engrossar.<br>Em todas as situações, depois da aplicação do minoxidil, deve-se usar um produto que evite o ressecamento da pele, é aconselhado lavar bem as mãos depois da aplicação, ter cuidado com a região dos olhos e evitar usar mais de 2 mL da solução por dia.'
+            }
+            if(idBtn == 'PraQServe'){
+                titulo.innerHTML = 'Para que serve'
+                text.innerHTML = 'A solução de minoxidil está indicada para o tratamento e prevenção da queda de cabelo androgênica. <br> <br> Para usufruir ao máximo dos seus efeitos, é importante que a solução seja utilizada conforme a orientação do médico, o tratamento não seja interrompido e que o produto seja aplicado na região, seguido de uma massagem, para estimular a absorção do produto.'
+            }
+            if(idBtn == 'ComoFunciona'){
+                titulo.innerHTML = 'Como funciona'
+                text.innerHTML = 'Ainda não se sabe ao certo qual o mecanismo de ação do minoxidil. Inicialmente, esta substância era utilizada para baixar a pressão arterial em pessoas hipertensas, já que o minoxidil tem uma ação vasodilatadora. Só depois se descobriu que um dos efeitos colaterais nestas pessoas era o crescimento do cabelo. <br> <br> Assim, o minoxidil passou a ser usado em solução no couro cabeludo, devido à sua ação vasodilatadora, que melhora a circulação sanguínea, promovendo a absorção de nutrientes no bolbo capilar. Sabe-se ainda que esta substância prolonga a fase anágena, que é a fase do ciclo capilar em que ocorre nascimento e crescimento dos fios.'
+            }
+        }
+        function clickX(){
+            containerComImg.style.display = 'flex'
+            containerX.style.display = 'none'
+            containerX.style.background = 'transparent'
+            //containerComTxt.style.width = '50%'
+            fundoTxt.style.background = 'transparent'
+            containerComTxt.style.marginTop = '0px'
+
+            titulo.innerHTML = 'SLOGAN MANEIRIN'
+            text.innerHTML = 'O minoxidil é uma substância ativa que estimula o crescimento capilar, já que aumenta o calibre dos vasos sanguíneos, melhorando a circulação sanguínea no local, e prolonga a fase anágena, que é a fase de nascimento e crescimento do cabelo.'
+
+        }
+        function btnMenu(){
+            cont++
+            if(cont == 1){
+                document.getElementById('imgLogo').style.display = 'none'
+                document.getElementById('itemMenu1').style.display = 'block'
+                document.getElementById('itemMenu2').style.display = 'block'
+                document.getElementById('itemMenu3').style.display = 'block'
+                document.getElementById('containerMenu').style.justifyContent = 'flex-end'
+            }else{
+                cont = 0
+                document.getElementById('imgLogo').style.display = 'block'
+                document.getElementById('itemMenu1').style.display = 'none'
+                document.getElementById('itemMenu2').style.display = 'none'
+                document.getElementById('itemMenu3').style.display = 'none'
+                document.getElementById('containerMenu').style.justifyContent = 'space-between'
+            }
+
+        }
+    
+    </script>
 </body>
 </html>
